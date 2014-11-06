@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/failure', to: 'sessions#failure'
+  delete '/auth/signout', to: 'sessions#destroy'
+
+  resources :photos
+
+  root "photos#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
