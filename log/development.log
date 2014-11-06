@@ -1945,3 +1945,2974 @@ Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 17:25:08 +0
 
 
 Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 17:25:08 +0800
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-11-06 21:38:30 +0800
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff1ad83ac88 @tempfile=#<Tempfile:/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/RackMultipart20141106-11933-1dwozhb>, @original_filename="3-7.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[avatar]\"; filename=\"3-7.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Photo"}
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-wym8ic.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit20141106-11933-13vfwew'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit20141106-11933-13vfwew'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit20141106-11933-17l106t'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-26kjit20141106-11933-17l106t'
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e30609fbce6a1a756f50a31ec86eae8320141106-11933-quxhlv.jpg'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "photos" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "3-7.jpg"], ["avatar_file_size", 246137], ["avatar_updated_at", "2014-11-06 13:38:30.723301"], ["created_at", "2014-11-06 13:38:31.200946"], ["updated_at", "2014-11-06 13:38:31.200946"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 645ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 145ms (Views: 143.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 21:38:31 +0800
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:44:36 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (1.3ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (57.4ms)
+Completed 500 Internal Server Error in 76ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"photos", :id=>nil} missing required keys: [:id]):
+     8: 
+     9: <h1>Show Photos</h1>
+    10: <% @photos.each do |photo| %>
+    11:   <%= link_to image_tag photo.avatar.url(:medium), photo_path(@photo) %>
+    12: <% end %>
+    13: 
+    14: 
+  app/views/photos/index.html.erb:11:in `block in _app_views_photos_index_html_erb___2483658883138231772_70337951112000'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb___2483658883138231772_70337951112000'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.7ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:45:16 +0800
+Processing by PhotosController#index as HTML
+  Rendered photos/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 6ms
+
+SyntaxError (/Users/jimmy/project/instagram/app/views/photos/index.html.erb:11: syntax error, unexpected ',', expecting ')'
+...tag photo.avatar.url(:medium)), photo_path(@photo) );@output...
+...                               ^):
+  app/views/photos/index.html.erb:11: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.8ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:45:17 +0800
+Processing by PhotosController#index as HTML
+  Rendered photos/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/jimmy/project/instagram/app/views/photos/index.html.erb:11: syntax error, unexpected ',', expecting ')'
+...tag photo.avatar.url(:medium)), photo_path(@photo) );@output...
+...                               ^):
+  app/views/photos/index.html.erb:11: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.7ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:45:25 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"photos", :id=>nil} missing required keys: [:id]):
+     8: 
+     9: <h1>Show Photos</h1>
+    10: <% @photos.each do |photo| %>
+    11:   <%= link_to image_tag photo.avatar.url(:medium), photo_path(@photo) %>
+    12: <% end %>
+    13: 
+    14: 
+  app/views/photos/index.html.erb:11:in `block in _app_views_photos_index_html_erb___2483658883138231772_70337957542600'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb___2483658883138231772_70337957542600'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.7ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:46:23 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.5ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"photos", :id=>nil} missing required keys: [:id]):
+     8: 
+     9: <h1>Show Photos</h1>
+    10: <% @photos.each do |photo| %>
+    11:   <%= link_to image_tag photo.avatar.url(:medium), photo_path(@photo) %>
+    12: <% end %>
+    13: 
+    14: 
+  app/views/photos/index.html.erb:11:in `block in _app_views_photos_index_html_erb___2483658883138231772_70337957542600'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb___2483658883138231772_70337957542600'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.6ms)
+
+
+Started GET "/photo/1" for 127.0.0.1 at 2014-11-06 21:46:26 +0800
+
+ActionController::RoutingError (No route matches [GET] "/photo/1"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (153.3ms)
+
+
+Started GET "/photos/1" for 127.0.0.1 at 2014-11-06 21:46:33 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPhoto Load (0.6ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered photos/show.html.erb within layouts/application (21.2ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (undefined method `img_tag' for #<#<Class:0x007ff1ad9899e0>:0x007ff1ad50a7c0>):
+    1: <%= link_to "edit", edit_photo_path(@photo) %>
+    2: <%= link_to "destroy", photo_path(@photo), method: :delete %>
+    3: <%= img_tag @photo.avatar.url %>
+  app/views/photos/show.html.erb:3:in `_app_views_photos_show_html_erb___4213756566977956348_70337985792540'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.7ms)
+
+
+Started GET "/photos/1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhoto Load (0.5ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered photos/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 81ms (Views: 77.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 21:46:56 +0800
+
+
+Started GET "/photos/1/edit" for 127.0.0.1 at 2014-11-06 21:47:00 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 3ms
+
+ActionView::MissingTemplate (Missing template photos/edit, application/edit with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jimmy/project/instagram/app/views"
+):
+  actionview (4.1.2) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.2) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.2) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.2) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.2) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.2) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.2) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.2) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.2) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.2) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.2) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.7ms)
+
+
+Started GET "/photos/1/edit" for 127.0.0.1 at 2014-11-06 21:47:00 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 3ms
+
+ActionView::MissingTemplate (Missing template photos/edit, application/edit with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jimmy/project/instagram/app/views"
+):
+  actionview (4.1.2) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.2) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.2) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.2) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.2) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.2) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.2) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.2) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.2) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.2) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.2) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.5ms)
+
+
+Started DELETE "/photos/1" for 127.0.0.1 at 2014-11-06 21:47:14 +0800
+Processing by PhotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "id"=>"1"}
+  [1m[35mPhoto Load (0.6ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  DELETE FROM "photos" WHERE "photos"."id" = ?  [["id", 1]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/001/original/2-1-1.jpg
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/001/medium/2-1-1.jpg
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/001/thumb/2-1-1.jpg
+Completed 500 Internal Server Error in 21ms
+
+ActionView::MissingTemplate (Missing template photos/destroy, application/destroy with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jimmy/project/instagram/app/views"
+):
+  actionview (4.1.2) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.2) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.2) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.2) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.2) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.2) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.2) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.2) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.2) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.2) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.2) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (0.8ms)
+
+
+Started GET "/photos/1" for 127.0.0.1 at 2014-11-06 21:47:54 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 7ms
+
+ActiveRecord::RecordNotFound (Couldn't find Photo with 'id'=1):
+  app/controllers/photos_controller.rb:36:in `find_id'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.9ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:47:54 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"photos", :id=>nil} missing required keys: [:id]):
+     8: 
+     9: <h1>Show Photos</h1>
+    10: <% @photos.each do |photo| %>
+    11:   <%= link_to image_tag photo.avatar.url(:medium), photo_path(@photo) %>
+    12: <% end %>
+    13: 
+    14: 
+  app/views/photos/index.html.erb:11:in `block in _app_views_photos_index_html_erb___2483658883138231772_70337957542600'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb___2483658883138231772_70337957542600'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.9ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:47:54 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"photos", :id=>nil} missing required keys: [:id]):
+     8: 
+     9: <h1>Show Photos</h1>
+    10: <% @photos.each do |photo| %>
+    11:   <%= link_to image_tag photo.avatar.url(:medium), photo_path(@photo) %>
+    12: <% end %>
+    13: 
+    14: 
+  app/views/photos/index.html.erb:11:in `block in _app_views_photos_index_html_erb___2483658883138231772_70337957542600'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb___2483658883138231772_70337957542600'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.8ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:54:04 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (35.4ms)
+Completed 500 Internal Server Error in 51ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"photos", :id=>nil} missing required keys: [:id]):
+     8: 
+     9: <h1>Show Photos</h1>
+    10: <% @photos.each do |photo| %>
+    11:   <%= link_to image_tag(photo.avatar.url(:medium).to_s), photo_path(@photo) %>
+    12: <% end %>
+    13: 
+    14: 
+  app/views/photos/index.html.erb:11:in `block in _app_views_photos_index_html_erb___2483658883138231772_70337984626980'
+  app/views/photos/index.html.erb:10:in `_app_views_photos_index_html_erb___2483658883138231772_70337984626980'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.9ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:54:50 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 120ms (Views: 118.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 21:54:51 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 21:54:52 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 94ms (Views: 92.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 91ms (Views: 88.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 21:55:38 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 79ms (Views: 77.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 21:55:50 +0800
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:55:51 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 74ms (Views: 72.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 21:56:00 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 70ms (Views: 67.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 21:56:06 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:00:06 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 204ms (Views: 190.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:07 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:00:09 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:00:11 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 77ms (Views: 75.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.5ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 100ms (Views: 97.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:00:19 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:00:21 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 75ms (Views: 73.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:01:25 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 89ms (Views: 86.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:01:26 +0800
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:01:27 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/jimmy/project/instagram/app/views/photos/edit.html.erb:1: syntax error, unexpected keyword_do_block
+...l => { :multipart => true }, do |f| @output_buffer.safe_appe...
+...                               ^
+/Users/jimmy/project/instagram/app/views/photos/edit.html.erb:5: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/photos/edit.html.erb:1: syntax error, unexpected keyword_do_block
+  app/views/photos/edit.html.erb:5: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.0ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:01:27 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/jimmy/project/instagram/app/views/photos/edit.html.erb:1: syntax error, unexpected keyword_do_block
+...l => { :multipart => true }, do |f| @output_buffer.safe_appe...
+...                               ^
+/Users/jimmy/project/instagram/app/views/photos/edit.html.erb:5: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/photos/edit.html.erb:1: syntax error, unexpected keyword_do_block
+  app/views/photos/edit.html.erb:5: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.0ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:02:00 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 7ms
+
+SyntaxError (/Users/jimmy/project/instagram/app/views/photos/edit.html.erb:1: syntax error, unexpected keyword_do_block
+...l => { :multipart => true }, do |f| @output_buffer.safe_appe...
+...                               ^
+/Users/jimmy/project/instagram/app/views/photos/edit.html.erb:5: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  app/views/photos/edit.html.erb:1: syntax error, unexpected keyword_do_block
+  app/views/photos/edit.html.erb:5: syntax error, unexpected keyword_ensure, expecting end-of-input
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.6ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.5ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 120ms (Views: 117.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:02:05 +0800
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:02:14 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"girl"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[35mPhoto Load (0.6ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+Completed 500 Internal Server Error in 3ms
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/photos_controller.rb:24:in `update'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.9ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:02:55 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 102ms (Views: 89.4ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:02:58 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"sasd"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 2ms
+
+ArgumentError (When assigning attributes, you must pass a hash as an argument.):
+  app/controllers/photos_controller.rb:24:in `update'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"girl"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: title
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 25ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 77ms (Views: 75.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:03:58 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:03:59 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 83ms (Views: 81.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:04:06 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"asdasd"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+Unpermitted parameters: title
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 68ms (Views: 67.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:09 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:04:10 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 68ms (Views: 66.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:04:39 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:04:52 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (36.8ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (undefined local variable or method `thumb' for #<#<Class:0x007ff1adab87a8>:0x007ff1aa21a518>):
+    2: <%= link_to "edit", edit_photo_path(@photo) %>
+    3: <%= link_to "destroy", photo_path(@photo), method: :delete %>
+    4: <%= link_to "Back", photos_path %>
+    5: <%= image_tag @photo.avatar.url(thumb) %>
+  app/views/photos/show.html.erb:5:in `_app_views_photos_show_html_erb___4213756566977956348_70337950104880'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.9ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 100ms (Views: 98.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:05:07 +0800
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.7ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 233ms (Views: 212.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:25 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:07:26 +0800
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:07:26 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:07:28 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"qweqwe"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: title
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:07:28 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 86ms (Views: 84.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:07:29 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:07:30 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 77ms (Views: 76.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:08:22 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 71ms (Views: 69.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:08:23 +0800
+
+ActionController::RoutingError (No route matches [PATCH] "/photos/2/edit"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (27.3ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:09:09 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (24.2ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (undefined method `edit_photos_path' for #<#<Class:0x007ff1adab87a8>:0x007ff1ad359b10>):
+    1: <%= form_for @photo, url: edit_photos_path(@photo) do |f| %>
+    2:   <%= f.text_field :title %>
+    3:   <%= f.submit %>
+    4: <% end %>
+  app/views/photos/edit.html.erb:1:in `_app_views_photos_edit_html_erb__4122441040988593959_70337984905920'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.0ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:09:10 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (43.2ms)
+Completed 500 Internal Server Error in 46ms
+
+ActionView::Template::Error (undefined method `edit_photos_path' for #<#<Class:0x007ff1adab87a8>:0x007ff1ad293528>):
+    1: <%= form_for @photo, url: edit_photos_path(@photo) do |f| %>
+    2:   <%= f.text_field :title %>
+    3:   <%= f.submit %>
+    4: <% end %>
+  app/views/photos/edit.html.erb:1:in `_app_views_photos_edit_html_erb__4122441040988593959_70337984499360'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.1ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 78ms (Views: 76.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:09:12 +0800
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:09:13 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (undefined method `edit_photos_path' for #<#<Class:0x007ff1adab87a8>:0x007ff1ada864d8>):
+    1: <%= form_for @photo, url: edit_photos_path(@photo) do |f| %>
+    2:   <%= f.text_field :title %>
+    3:   <%= f.submit %>
+    4: <% end %>
+  app/views/photos/edit.html.erb:1:in `_app_views_photos_edit_html_erb__4122441040988593959_70337984905920'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.6ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:09:13 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined method `edit_photos_path' for #<#<Class:0x007ff1adab87a8>:0x007ff1ad37a748>):
+    1: <%= form_for @photo, url: edit_photos_path(@photo) do |f| %>
+    2:   <%= f.text_field :title %>
+    3:   <%= f.submit %>
+    4: <% end %>
+  app/views/photos/edit.html.erb:1:in `_app_views_photos_edit_html_erb__4122441040988593959_70337984499360'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.8ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 70ms (Views: 67.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:10:05 +0800
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:10:09 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 83ms (Views: 81.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:10:12 +0800
+
+ActionController::RoutingError (No route matches [PATCH] "/photos/2/edit"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.7ms)
+
+
+Started PATCH "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:13:44 +0800
+
+ActionController::RoutingError (No route matches [PATCH] "/photos/2/edit"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (58.1ms)
+
+
+Started PATCH "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:13:50 +0800
+
+ActionController::RoutingError (No route matches [PATCH] "/photos/2/edit"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (26.3ms)
+
+
+Started PATCH "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:17:28 +0800
+
+ActionController::RoutingError (No route matches [PATCH] "/photos/2/edit"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (8.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (53.0ms)
+
+
+Started PATCH "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:17:53 +0800
+
+ActionController::RoutingError (No route matches [PATCH] "/photos/2/edit"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.8ms)
+
+
+Started PATCH "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:18:35 +0800
+
+ActionController::RoutingError (No route matches [PATCH] "/photos/2/edit"):
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.6ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:18:39 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.8ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 228ms (Views: 199.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:18:39 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 75ms (Views: 72.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 74ms (Views: 72.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:40 +0800
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:18:43 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"qweqwe"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: title
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 71ms (Views: 70.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:45 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:18:47 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 75ms (Views: 73.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 82ms (Views: 79.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:52 +0800
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:18:53 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 86ms (Views: 83.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"qwewqe"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: title
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 75ms (Views: 73.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:18:55 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:18:56 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 77ms (Views: 74.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:18:58 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 103ms (Views: 101.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:18:59 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 60ms (Views: 58.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:19:00 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (7.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 84ms (Views: 75.7ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:19:13 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:19:14 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 61ms (Views: 59.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"123123"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+Unpermitted parameters: title
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 77ms (Views: 76.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:19:16 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:20:59 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (0.7ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 79ms (Views: 75.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/photos/2/edit" for 127.0.0.1 at 2014-11-06 22:21:00 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/edit.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 96ms (Views: 94.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/photos/2" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"asdasd"}, "commit"=>"Update Photo", "id"=>"2"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+Unpermitted parameters: title
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 73ms (Views: 71.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:03 +0800
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:21:04 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 82ms (Views: 80.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/photos/2" for 127.0.0.1 at 2014-11-06 22:21:30 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPhoto Load (1.0ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered photos/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 121ms (Views: 109.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:31 +0800
+
+
+Started DELETE "/photos/2" for 127.0.0.1 at 2014-11-06 22:21:35 +0800
+Processing by PhotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "id"=>"2"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  DELETE FROM "photos" WHERE "photos"."id" = ?  [["id", 2]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/002/original/3-7.jpg
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/002/medium/3-7.jpg
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/002/thumb/3-7.jpg
+Completed 500 Internal Server Error in 66ms
+
+ActionView::MissingTemplate (Missing template photos/destroy, application/destroy with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/jimmy/project/instagram/app/views"
+):
+  actionview (4.1.2) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.2) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.2) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.2) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.2) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.2) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.2) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.2) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.2) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.2) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.2) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.2) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.2) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.2) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.2) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.2) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.2) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.2) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.2) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.2) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.2) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.2) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.2) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.2) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.2) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.2) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.2) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.2) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.2) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.2.2) lib/omniauth/builder.rb:59:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.2) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.2) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.2) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.2) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.2) lib/rails/engine.rb:514:in `call'
+  railties (4.1.2) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 69ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 93ms (Views: 91.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:21:43 +0800
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-11-06 22:22:06 +0800
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff1ad8f0ec0 @tempfile=#<Tempfile:/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/RackMultipart20141106-11933-ditarb>, @original_filename="10365758_1475434026069407_2760632608657216750_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[avatar]\"; filename=\"10365758_1475434026069407_2760632608657216750_n.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Photo"}
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1otzobd.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya20141106-11933-16zeqng'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya20141106-11933-16zeqng'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya20141106-11933-ox23cn'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-1qzqyya20141106-11933-ox23cn'
+  [1m[35m (0.4ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/e6f0d1b0cf115eaeb48332c751ad023520141106-11933-djf6sp.jpg'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "photos" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "10365758_1475434026069407_2760632608657216750_n.jpg"], ["avatar_file_size", 41423], ["avatar_updated_at", "2014-11-06 14:22:06.332728"], ["created_at", "2014-11-06 14:22:06.964768"], ["updated_at", "2014-11-06 14:22:06.964768"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 737ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:22:06 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 110ms (Views: 108.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:07 +0800
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-11-06 22:22:12 +0800
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff1ad2325c0 @tempfile=#<Tempfile:/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/RackMultipart20141106-11933-1aq28mm>, @original_filename="10247317_814531065241716_5500410057914977456_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[avatar]\"; filename=\"10247317_814531065241716_5500410057914977456_n.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Photo"}
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1ipvxpq.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u20141106-11933-xm0s2w'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u20141106-11933-xm0s2w'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u20141106-11933-1jk9nqy'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-1v64t8u20141106-11933-1jk9nqy'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/0087d3260866f05ba2561046710673be20141106-11933-13dsotu.jpg'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "photos" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "10247317_814531065241716_5500410057914977456_n.jpg"], ["avatar_file_size", 11292], ["avatar_updated_at", "2014-11-06 14:22:12.821594"], ["created_at", "2014-11-06 14:22:13.074456"], ["updated_at", "2014-11-06 14:22:13.074456"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 310ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 87ms (Views: 86.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:13 +0800
+
+
+Started GET "/photos/3" for 127.0.0.1 at 2014-11-06 22:22:14 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered photos/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 70ms (Views: 68.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/photos/3" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+Processing by PhotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "id"=>"3"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "photos" WHERE "photos"."id" = ?[0m  [["id", 3]]
+  [1m[35m (8.8ms)[0m  commit transaction
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/003/original/10365758_1475434026069407_2760632608657216750_n.jpg
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/003/medium/10365758_1475434026069407_2760632608657216750_n.jpg
+[paperclip] deleting /Users/jimmy/project/instagram/public/system/photos/avatars/000/000/003/thumb/10365758_1475434026069407_2760632608657216750_n.jpg
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 19ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:22:16 +0800
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 22:24:18 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.9ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered photos/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 208ms (Views: 166.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/photos/4/edit" for 127.0.0.1 at 2014-11-06 22:24:19 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered photos/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 79ms (Views: 77.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/photos/4" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"eqweqwe"}, "commit"=>"Update Photo", "id"=>"4"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+Unpermitted parameters: title
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos/4
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered photos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:21 +0800
+
+
+Started GET "/photos/4/edit" for 127.0.0.1 at 2014-11-06 22:24:45 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered photos/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 78ms (Views: 65.1ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/photos/4" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"title"=>"qweqwe"}, "commit"=>"Update Photo", "id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "photos" SET "title" = ?, "updated_at" = ? WHERE "photos"."id" = 4  [["title", "qweqwe"], ["updated_at", "2014-11-06 14:24:47.300652"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos/4
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered photos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 77ms (Views: 76.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800

@@ -21,11 +21,14 @@ class PhotosController < ApplicationController
   end
 
   def update
-
+    if @photo.update(photo_params)
+      redirect_to photo_path(@photo)
+    end
   end
 
   def destroy
-
+    @photo.destroy
+    redirect_to photos_path
   end
 
   private
@@ -35,6 +38,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:avatar)
+    params.require(:photo).permit(:title ,:avatar)
   end
 end
