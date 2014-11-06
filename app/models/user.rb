@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   has_many :photos
-  has_many :comments, :through => :photos
 
   def self.from_omniauth(auth_hash)
     user = where(:fb_uid => auth_hash[:uid]).first_or_initialize

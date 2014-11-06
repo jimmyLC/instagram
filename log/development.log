@@ -4916,3 +4916,1381 @@ Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0
 
 
 Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:24:47 +0800
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:25:34 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 95ms (Views: 92.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-11-06 22:25:41 +0800
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ=", "photo"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff1ad1bad68 @tempfile=#<Tempfile:/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/RackMultipart20141106-11933-1hp7al6>, @original_filename="1483446_709020145782780_942375674_o.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[avatar]\"; filename=\"1483446_709020145782780_942375674_o.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Photo"}
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-1amtmqa.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe20141106-11933-1uwzurr'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe20141106-11933-1uwzurr'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe20141106-11933-1s8yxzm'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-d6guqe20141106-11933-1s8yxzm'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-cu1yoz.jpg'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "photos" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "1483446_709020145782780_942375674_o.jpg"], ["avatar_file_size", 33971], ["avatar_updated_at", "2014-11-06 14:25:41.455973"], ["created_at", "2014-11-06 14:25:41.960476"], ["updated_at", "2014-11-06 14:25:41.960476"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 589ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:25:41 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:25:42 +0800
+
+
+Started GET "/photos/5" for 127.0.0.1 at 2014-11-06 22:25:43 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered photos/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 83ms (Views: 80.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:25:46 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 55ms (Views: 54.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/auth/signout" for 127.0.0.1 at 2014-11-06 22:46:15 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zRytMTXl0y3KxjoMAnPVAof+hv0IXmUMZwrGpVhj0WQ="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 22:46:15 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (2.4ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 207ms (Views: 201.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:15 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:15 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:15 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:15 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:15 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:16 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:16 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:16 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:16 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:16 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:16 +0800
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 22:46:17 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered photos/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 87ms (Views: 85.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:46:18 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 66ms (Views: 65.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/photos/5" for 127.0.0.1 at 2014-11-06 22:46:19 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered photos/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 78ms (Views: 77.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:46:20 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 59ms (Views: 58.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-11-06 22:46:30 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-11-06 22:46:30 +0800
+
+
+Started GET "/auth/facebook/callback?code=AQA3jA_3Efffu0ib2uqSH8ZIr3vruDIh9jY9Zex3WNLDvJJpDePYHhmWGchyOu_c4BQC4-dkiVS04rjs1tLE2mXm2xPVPZcRr9eOBkF0ESu3X97_1uwRDBD_MftPvjiENDi0FTNG7KQ6l4f_keCKxIndgNou7btL2w__SYaCs91oeSG39rYw5ZiY4Hq1Okob2mQ3SGGJBdtBkjCcOJZ8eyg0k5U4Hj2ZSRlaJxxHWUH7VRU4hZ18aNByo-tLTkvSQS33MdlWFfh7xq4nGd0mr94NhA3tGkL0M7WSzNDHt4OGR2Zbd6ujzFA7QFyDqaGrq-3zFFZtfeqKzi-Lxo3TpxYC&state=4f758d229f16f64a6510aa4534edb089baa03de6c55f426c" for 127.0.0.1 at 2014-11-06 22:46:31 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQA3jA_3Efffu0ib2uqSH8ZIr3vruDIh9jY9Zex3WNLDvJJpDePYHhmWGchyOu_c4BQC4-dkiVS04rjs1tLE2mXm2xPVPZcRr9eOBkF0ESu3X97_1uwRDBD_MftPvjiENDi0FTNG7KQ6l4f_keCKxIndgNou7btL2w__SYaCs91oeSG39rYw5ZiY4Hq1Okob2mQ3SGGJBdtBkjCcOJZ8eyg0k5U4Hj2ZSRlaJxxHWUH7VRU4hZ18aNByo-tLTkvSQS33MdlWFfh7xq4nGd0mr94NhA3tGkL0M7WSzNDHt4OGR2Zbd6ujzFA7QFyDqaGrq-3zFFZtfeqKzi-Lxo3TpxYC", "state"=>"4f758d229f16f64a6510aa4534edb089baa03de6c55f426c", "provider"=>"facebook"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."fb_uid" = '814320621965825'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.4ms)[0m  UPDATE "users" SET "fb_token" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["fb_token", "CAAEMqBzN0U8BABlxeFVQ2e0TnLXPnGOleFk86zC1nlrXWozU8OflZCuhOYLVAGjHhQLqpCvGajtFJcA0TG5UXiuwE5bOk7XKeOJIWPXMYK49McD6ECvsLQB2sQxGKBlOXXDdwLVg4ut1jQPdK3aA13tKejquYeAgAQMVkOLTdQihUuwQn6HhBCYTritJaR1FobRrIdv7osJEBYciC"], ["updated_at", "2014-11-06 14:46:31.911436"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 22:46:31 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 69ms (Views: 67.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:32 +0800
+
+
+Started DELETE "/auth/signout" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Imcz5IdWdwn61zuq94BWdOy1+D6Vwwo6CKfcqbLvUxg="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 80ms (Views: 78.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:33 +0800
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-11-06 22:46:39 +0800
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pa+Hxsh4EOmb3VTO074I3ccpzgG9NyT/BG4Jc6Sa+xA=", "photo"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff1ad4f01e0 @tempfile=#<Tempfile:/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/RackMultipart20141106-11933-1kq6qm3>, @original_filename="1483446_709020145782780_942375674_o.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[avatar]\"; filename=\"1483446_709020145782780_942375674_o.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Photo"}
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-19ind1.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp20141106-11933-1y450yz'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp20141106-11933-1y450yz'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp20141106-11933-8uwxa5'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-fhqwrp20141106-11933-8uwxa5'
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-1vr4tzv.jpg'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "photos" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "1483446_709020145782780_942375674_o.jpg"], ["avatar_file_size", 33971], ["avatar_updated_at", "2014-11-06 14:46:39.692444"], ["created_at", "2014-11-06 14:46:40.190595"], ["updated_at", "2014-11-06 14:46:40.190595"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 570ms (ActiveRecord: 2.8ms)
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pa+Hxsh4EOmb3VTO074I3ccpzgG9NyT/BG4Jc6Sa+xA=", "photo"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff1a9c858a0 @tempfile=#<Tempfile:/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/RackMultipart20141106-11933-1e948uk>, @original_filename="1483446_709020145782780_942375674_o.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[avatar]\"; filename=\"1483446_709020145782780_942375674_o.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Photo"}
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-1eisnq2.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf20141106-11933-1tdd4o4'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf20141106-11933-1tdd4o4'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf20141106-11933-1aw6259'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-14x5wdf20141106-11933-1aw6259'
+  [1m[35m (0.3ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/85b0c55c27b37a706fa7204deb1ae96f20141106-11933-wkcrzr.jpg'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "photos" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "1483446_709020145782780_942375674_o.jpg"], ["avatar_file_size", 33971], ["avatar_updated_at", "2014-11-06 14:46:40.244493"], ["created_at", "2014-11-06 14:46:40.741870"], ["updated_at", "2014-11-06 14:46:40.741870"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 534ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 64ms (Views: 63.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:46:40 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-11-06 22:47:42 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2014-11-06 22:47:42 +0800
+
+
+Started GET "/auth/facebook/callback?code=AQAioddEJzROcnXGk1iSnGhI-_NpTI4_7Sh6ub10bcO8qdjy6VtpaknJfprKRnHFlGaP3W09Xdc7XrUMjgcmPqIYYNOi2DijLj2rdWg1wtVlk4uO48xpoOH0GoVyDwDQ-Pzrc0MAnEbFgCkURs9ZPcgFBkzovpTdI6Vm47VTPAPl2h6MKv0LTGItHmjV-ChKXaJVjdJwZ458dXrnVztOqyH_rfunBdI9E67SxRPHu6hxgKYmfGwZn3HyoAWXsL-h_7GWCLkY5Hp0232UWjZFbg_kkY4hRT4G55Kw-MnRGL1cjFj1FgQ7v7AZFnsWMA5vz4yzVX_GolazoSAp-sEcj1L1&state=945eb1ec1db8ced0b03aeecd6c53ed27784ba7ad57cd53a7" for 127.0.0.1 at 2014-11-06 22:47:42 +0800
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQAioddEJzROcnXGk1iSnGhI-_NpTI4_7Sh6ub10bcO8qdjy6VtpaknJfprKRnHFlGaP3W09Xdc7XrUMjgcmPqIYYNOi2DijLj2rdWg1wtVlk4uO48xpoOH0GoVyDwDQ-Pzrc0MAnEbFgCkURs9ZPcgFBkzovpTdI6Vm47VTPAPl2h6MKv0LTGItHmjV-ChKXaJVjdJwZ458dXrnVztOqyH_rfunBdI9E67SxRPHu6hxgKYmfGwZn3HyoAWXsL-h_7GWCLkY5Hp0232UWjZFbg_kkY4hRT4G55Kw-MnRGL1cjFj1FgQ7v7AZFnsWMA5vz4yzVX_GolazoSAp-sEcj1L1", "state"=>"945eb1ec1db8ced0b03aeecd6c53ed27784ba7ad57cd53a7", "provider"=>"facebook"}
+  [1m[35mUser Load (8.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."fb_uid" = '814320621965825'  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "fb_token" = ?, "updated_at" = ? WHERE "users"."id" = 2  [["fb_token", "CAAEMqBzN0U8BADnZA9fZBEv2dEoOSo8pjeJpDRC5F8tRBEdkHgxobplJ3GY16Fj46IhQFKKxHXOLHJNk8LZA29CNtPGZBOsgKSj4BzwnqbnVeDmiTsoLeZCmUvP0gUpLx7TIsRudhUHgiSwFTjwgAdMGgbmvoZBbJKqr2PFaEd1gLS8qYjSSOTOR80scfVrbQKzd0MqnfzFdbNGSPDvTQH"], ["updated_at", "2014-11-06 14:47:43.387602"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 103ms (Views: 101.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 22:47:43 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPhotoIdToComment (20141106145124)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "comments" ADD "photo_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141106145124"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_photos_on_comment_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_photos_on_comment_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_photos_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_photos_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_fb_uid' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_fb_uid' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.5ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 309ms (Views: 289.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:05:49 +0800
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:05:50 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered photos/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 65ms (Views: 62.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:12:07 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (1.4ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  Rendered photos/show.html.erb within layouts/application (19.9ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <%= link_to "Back", photos_path %><br>
+    5: <%= image_tag @photo.avatar.url %><br>
+    6: <p>comments</p>
+    7: <% @comemnts.each do |co| %>
+    8:   <%= co.comment %>
+    9:   <%= link_to "delete", photo_comment_path(co), method: :delete %>
+   10: <% end %>
+  app/views/photos/show.html.erb:7:in `_app_views_photos_show_html_erb___4213756566977956348_70337983360380'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (25.5ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:12:19 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered photos/show.html.erb within layouts/application (42.9ms)
+Completed 500 Internal Server Error in 53ms
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4: <%= link_to "Back", photos_path %><br>
+    5: <%= image_tag @photo.avatar.url %><br>
+    6: <p>comments</p>
+    7: <% @comments.each do |co| %>
+    8:   <%= co.comment %>
+    9:   <%= link_to "delete", photo_comment_path(co), method: :delete %>
+   10: <% end %>
+  app/views/photos/show.html.erb:7:in `_app_views_photos_show_html_erb___4213756566977956348_70337957442420'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.8ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:13:14 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (1.0ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.7ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (73.5ms)
+Completed 500 Internal Server Error in 107ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    11: <% end %>
+    12: 
+    13: <p>Add comment</p>
+    14: <% form_for @comment do |f| %>
+    15:   <%= f.lael :comment, "write a comment" %>
+    16:   <%= f.text_area :comment %>
+    17:   <%= f.submit %>
+  app/views/photos/show.html.erb:14:in `_app_views_photos_show_html_erb___4213756566977956348_70337946133640'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.9ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:13:30 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `comment' for #<Photo:0x007ff1adabafa8>):
+    11: <% end %>
+    12: 
+    13: <p>Add comment</p>
+    14: <% form_for @photo.comment do |f| %>
+    15:   <%= f.lael :comment, "write a comment" %>
+    16:   <%= f.text_area :comment %>
+    17:   <%= f.submit %>
+  app/views/photos/show.html.erb:14:in `_app_views_photos_show_html_erb___4213756566977956348_70337985944540'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.2ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:13:39 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (11.7ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (undefined method `model_name' for Comment::ActiveRecord_Associations_CollectionProxy:Class):
+    11: <% end %>
+    12: 
+    13: <p>Add comment</p>
+    14: <% form_for @photo.comments do |f| %>
+    15:   <%= f.lael :comment, "write a comment" %>
+    16:   <%= f.text_area :comment %>
+    17:   <%= f.submit %>
+  app/views/photos/show.html.erb:14:in `_app_views_photos_show_html_erb___4213756566977956348_70337985158440'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:14:43 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (2.4ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (32.4ms)
+Completed 500 Internal Server Error in 59ms
+
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"comments", :id=>"4"} missing required keys: [:photo_id]):
+    11: <% end %>
+    12: 
+    13: <p>Add comment</p>
+    14: <% form_for Comment.new, url: photo_comments_path do |f| %>
+    15:   <%= f.lael :comment, "write a comment" %>
+    16:   <%= f.text_area :comment %>
+    17:   <%= f.submit %>
+  app/views/photos/show.html.erb:14:in `_app_views_photos_show_html_erb___4213756566977956348_70337951173440'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.5ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:15:08 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (58.1ms)
+Completed 500 Internal Server Error in 63ms
+
+ActionView::Template::Error (undefined method `lael' for #<ActionView::Helpers::FormBuilder:0x007ff1ad1d2198>):
+    12: 
+    13: <p>Add comment</p>
+    14: <% form_for Comment.new, url: photo_comments_path(@photo) do |f| %>
+    15:   <%= f.lael :comment, "write a comment" %>
+    16:   <%= f.text_area :comment %>
+    17:   <%= f.submit %>
+    18: <% end %>
+  app/views/photos/show.html.erb:15:in `block in _app_views_photos_show_html_erb___4213756566977956348_70337987985880'
+  app/views/photos/show.html.erb:14:in `_app_views_photos_show_html_erb___4213756566977956348_70337987985880'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.2ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 116ms (Views: 112.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:15:14 +0800
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (1.3ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 231ms (Views: 206.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:19:37 +0800
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 23:19:40 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.6ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 191ms (Views: 189.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/photos/5" for 127.0.0.1 at 2014-11-06 23:19:41 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 5]]
+  Rendered photos/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 69ms (Views: 67.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 23:19:45 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  Rendered photos/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 72ms (Views: 71.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:20:23 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `comment' for #<Photo:0x007ff1aa245e98>):
+    12: 
+    13: <p>Add comment</p>
+    14: 
+    15: <% form_for @photo.comment, url: photo_comments_path(@photo) do |f| %>
+    16:   <%= f.label :comment, "write a comment" %>
+    17:   <%= f.text_area :comment %>
+    18:   <%= f.submit %>
+  app/views/photos/show.html.erb:15:in `_app_views_photos_show_html_erb___4213756566977956348_70337959141220'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.2ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:20:23 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `comment' for #<Photo:0x007ff1a8aa9d20>):
+    12: 
+    13: <p>Add comment</p>
+    14: 
+    15: <% form_for @photo.comment, url: photo_comments_path(@photo) do |f| %>
+    16:   <%= f.label :comment, "write a comment" %>
+    17:   <%= f.text_area :comment %>
+    18:   <%= f.submit %>
+  app/views/photos/show.html.erb:15:in `_app_views_photos_show_html_erb___4213756566977956348_70337946784960'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.7ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:20:27 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `model_name' for Comment::ActiveRecord_Associations_CollectionProxy:Class):
+    12: 
+    13: <p>Add comment</p>
+    14: 
+    15: <% form_for @photo.comments, url: photo_comments_path(@photo) do |f| %>
+    16:   <%= f.label :comment, "write a comment" %>
+    17:   <%= f.text_area :comment %>
+    18:   <%= f.submit %>
+  app/views/photos/show.html.erb:15:in `_app_views_photos_show_html_erb___4213756566977956348_70337984779640'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:20:41 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `comment' for #<Photo:0x007ff1ad289848>):
+    12: 
+    13: <p>Add comment</p>
+    14: 
+    15: <% form_for @photo.comment, url: photo_comments_path(@photo) do |f| %>
+    16:   <%= f.label :comment, "write a comment" %>
+    17:   <%= f.text_area :comment %>
+    18:   <%= f.submit %>
+  app/views/photos/show.html.erb:15:in `_app_views_photos_show_html_erb___4213756566977956348_70337984469400'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:21:09 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `comment' for #<Photo:0x007ff1ad1684f0>):
+    12: 
+    13: <p>Add comment</p>
+    14: 
+    15: <% form_for @photo.comment, url: photo_comments_path(@photo) do |f| %>
+    16:   <%= f.label :comment, "write a comment" %>
+    17:   <%= f.text_area :comment %>
+    18:   <%= f.submit %>
+  app/views/photos/show.html.erb:15:in `_app_views_photos_show_html_erb___4213756566977956348_70337983852720'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.1ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:21:09 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `comment' for #<Photo:0x007ff1ad80a1f0>):
+    12: 
+    13: <p>Add comment</p>
+    14: 
+    15: <% form_for @photo.comment, url: photo_comments_path(@photo) do |f| %>
+    16:   <%= f.label :comment, "write a comment" %>
+    17:   <%= f.text_area :comment %>
+    18:   <%= f.submit %>
+  app/views/photos/show.html.erb:15:in `_app_views_photos_show_html_erb___4213756566977956348_70337984469400'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.8ms)
+  [1m[36mPhoto Load (0.7ms)[0m  [1mSELECT  "photos".* FROM "photos"   ORDER BY "photos"."id" ASC LIMIT 1[0m
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:32:34 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (2.3ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (39.1ms)
+Completed 500 Internal Server Error in 84ms
+
+ActionView::Template::Error (undefined method `comment' for #<Photo:0x007ff1a9f04478>):
+    12: 
+    13: <p>Add comment</p>
+    14: 
+    15: <% form_for @photo.comment, :url => photo_comments_path(@photo) do |f| %>
+    16:   <%= f.label :comment, "write a comment" %>
+    17:   <%= f.text_area :comment %>
+    18:   <%= f.submit %>
+  app/views/photos/show.html.erb:15:in `_app_views_photos_show_html_erb___4213756566977956348_70337946183640'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.8ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 177ms (Views: 175.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:32:54 +0800
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 76ms (Views: 73.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:33:29 +0800
+
+
+Started POST "/photos/4/comments" for 127.0.0.1 at 2014-11-06 23:33:32 +0800
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CPz2EnOEOGrGs7wEHvb/PAZb3b/ZjZ1JyXxi3yOlKMM=", "comment"=>{"comment"=>"asdasdasd"}, "commit"=>"Create Comment", "photo_id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  app/controllers/comments_controller.rb:27:in `find_params'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.7ms)
+
+
+Started GET "/photos/4/" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 258ms (Views: 221.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:37:01 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:37:02 +0800
+
+
+Started POST "/photos/4/comments" for 127.0.0.1 at 2014-11-06 23:37:05 +0800
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CPz2EnOEOGrGs7wEHvb/PAZb3b/ZjZ1JyXxi3yOlKMM=", "comment"=>{"comment"=>"asdasdasd"}, "commit"=>"Create Comment", "photo_id"=>"4"}
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Comment without an ID):
+  app/controllers/comments_controller.rb:27:in `find_params'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.1ms)
+
+
+Started POST "/photos/4/comments" for 127.0.0.1 at 2014-11-06 23:38:06 +0800
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CPz2EnOEOGrGs7wEHvb/PAZb3b/ZjZ1JyXxi3yOlKMM=", "comment"=>{"comment"=>"asdasdasd"}, "commit"=>"Create Comment", "photo_id"=>"4"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "comments" ("comment", "created_at", "photo_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "asdasdasd"], ["created_at", "2014-11-06 15:38:07.051418"], ["photo_id", 4], ["updated_at", "2014-11-06 15:38:07.051418"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos/4
+Completed 302 Found in 35ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:38:07 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 17ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"comments", :format=>nil, :id=>nil, :photo_id=>#<Comment id: 1, comment: "asdasdasd", created_at: "2014-11-06 15:38:07", updated_at: "2014-11-06 15:38:07", photo_id: 4>} missing required keys: [:id]):
+     7: <p>comments</p>
+     8: <% @photo.comments.each do |co| %>
+     9:   <%= co.comment %>
+    10:   <%= link_to "delete", photo_comment_path(co), method: :delete %>
+    11: <% end %>
+    12: 
+    13: <p>Add comment</p>
+  app/views/photos/show.html.erb:10:in `block in _app_views_photos_show_html_erb__2183726809341670805_70132114266920'
+  app/views/photos/show.html.erb:8:in `_app_views_photos_show_html_erb__2183726809341670805_70132114266920'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.7ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.4ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 125ms (Views: 117.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:34 +0800
+
+
+Started POST "/photos/4/comments" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CPz2EnOEOGrGs7wEHvb/PAZb3b/ZjZ1JyXxi3yOlKMM=", "comment"=>{"comment"=>"asdsadasdasd"}, "commit"=>"Create Comment", "photo_id"=>"4"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("comment", "created_at", "photo_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "asdsadasdasd"], ["created_at", "2014-11-06 15:39:37.594335"], ["photo_id", 4], ["updated_at", "2014-11-06 15:39:37.594335"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos/4
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 167ms (Views: 164.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:39:37 +0800
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 94ms (Views: 91.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:08 +0800
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 99ms (Views: 97.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-06 23:40:18 +0800
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 23:41:17 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.4ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (87.7ms)
+Completed 200 OK in 220ms (Views: 206.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/photos/5" for 127.0.0.1 at 2014-11-06 23:41:19 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 5]]
+  Rendered photos/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 142ms (Views: 140.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 23:41:22 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 89ms (Views: 87.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-06 23:41:24 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 69ms (Views: 67.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-06 23:41:27 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  Rendered photos/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 71ms (Views: 70.1ms | ActiveRecord: 0.7ms)

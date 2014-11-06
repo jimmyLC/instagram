@@ -1,4 +1,3 @@
 class Comment < ActiveRecord::Base
-  has_many :photos
-  has_many :users, :through => :photos
+  belongs_to :photo
 end

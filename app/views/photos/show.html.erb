@@ -2,4 +2,20 @@
 <%= link_to "edit", edit_photo_path(@photo) %>
 <%= link_to "destroy", photo_path(@photo), method: :delete %>
 <%= link_to "Back", photos_path %><br>
-<%= image_tag @photo.avatar.url %>
+<%= image_tag @photo.avatar.url %><br>
+
+<p>comments</p>
+<% @photo.comments.each do |co| %>
+<div>
+  <%= co.comment %>
+  <%= link_to "delete", photo_comment_path(co.photo, co), method: :delete %>
+</div>
+<% end %>
+
+<p>Add comment</p>
+
+<%= form_for Comment.new, :url => photo_comments_path(@photo) do |f| %>
+  <%= f.label :comment, "write comment" %>
+  <%= f.text_area :comment %>
+  <%= f.submit %>
+<% end %>
