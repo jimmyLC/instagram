@@ -7,6 +7,15 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def check_fb_login
+    unless current_user
+      flash[:alert] = "blah"
+
+      redirect_to root_path
+    end
+
+  end
+
   def current_user
     @current_user = User.find(session[:user_id]) if session[:user_id]
     #why add(if session[:user_id])
