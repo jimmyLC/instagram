@@ -1,4 +1,7 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, '295391154000207', '517163ddb151fb5bf9477ed2a3ca6338',
-  :scope => 'email, user_photos, read_friendlists, read_stream'
+  config = YAML.load( File.read("#{Rails.root}/config/facebook.yml"))[Rails.env]
+
+  provider :facebook, config["app_id"], config["secret"],
+           :scope => 'email, user_photos, read_friendlists, read_stream'
+
 end
