@@ -7253,3 +7253,784 @@ Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 16:06:29 +0
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 16:06:29 +0800
 >>>>>>> tagging
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-07 18:59:39 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.7) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.7) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.3ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTags (20141106161326)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "count" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141106161326"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateTaggings (20141106161707)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "photo_id" integer, "tag_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141106161707"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_photos_on_comment_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_photos_on_comment_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_photos_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_photos_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_fb_uid' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_fb_uid' AND type='index'
+[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.8ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 4]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (104.7ms)
+Completed 200 OK in 377ms (Views: 342.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:10 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:11 +0800
+
+
+Started GET "/system/photos/avatars/000/000/004/medium/10247317_814531065241716_5500410057914977456_n.jpg?1415283732" for 127.0.0.1 at 2014-11-07 19:00:11 +0800
+
+ActionController::RoutingError (No route matches [GET] "/system/photos/avatars/000/000/004/medium/10247317_814531065241716_5500410057914977456_n.jpg"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.0ms)
+
+
+Started GET "/photos/5" for 127.0.0.1 at 2014-11-07 19:00:12 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."photo_id" = ?[0m  [["photo_id", 5]]
+  [1m[35mComment Load (0.5ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 5]]
+  Rendered photos/show.html.erb within layouts/application (48.9ms)
+Completed 200 OK in 132ms (Views: 127.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/photos/5/comments" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d3nIjaekDIbt1pRQs+xal9hrWmnidwt5TpL3NZaPn04=", "comment"=>{"comment"=>"asdasd"}, "commit"=>"Create Comment", "photo_id"=>"5"}
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "comments" ("comment", "created_at", "photo_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "asdasd"], ["created_at", "2014-11-07 11:00:18.027980"], ["photo_id", 5], ["updated_at", "2014-11-07 11:00:18.027980"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos/5
+Completed 302 Found in 12ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/photos/5" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."photo_id" = ?  [["photo_id", 5]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 5]]
+  Rendered photos/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 76ms (Views: 73.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:18 +0800
+
+
+Started GET "/photos/5/edit" for 127.0.0.1 at 2014-11-07 19:00:19 +0800
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."photo_id" = ?[0m  [["photo_id", 5]]
+  Rendered photos/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/photos/5" for 127.0.0.1 at 2014-11-07 19:00:25 +0800
+Processing by PhotosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d3nIjaekDIbt1pRQs+xal9hrWmnidwt5TpL3NZaPn04=", "photo"=>{"title"=>"asasd", "taglist"=>"asdasd"}, "commit"=>"Update Photo", "id"=>"5"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  UPDATE "taggings" SET "photo_id" = NULL WHERE "taggings"."photo_id" = ?  [["photo_id", 5]]
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT  "tags".* FROM "tags"  WHERE "tags"."name" = 'asdasd' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-11-07 11:00:25.969212"], ["name", "asdasd"], ["updated_at", "2014-11-07 11:00:25.969212"]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "photos" SET "title" = ?, "updated_at" = ? WHERE "photos"."id" = 5[0m  [["title", "asasd"], ["updated_at", "2014-11-07 11:00:25.974770"]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("created_at", "photo_id", "tag_id", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-11-07 11:00:25.977604"], ["photo_id", 5], ["tag_id", 1], ["updated_at", "2014-11-07 11:00:25.977604"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos/5
+Completed 302 Found in 21ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/photos/5" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."photo_id" = ?[0m  [["photo_id", 5]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?  [["photo_id", 5]]
+  Rendered photos/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 81ms (Views: 79.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:26 +0800
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-07 19:00:32 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 4]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 81ms (Views: 79.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/system/photos/avatars/000/000/004/medium/10247317_814531065241716_5500410057914977456_n.jpg?1415283732" for 127.0.0.1 at 2014-11-07 19:00:32 +0800
+
+ActionController::RoutingError (No route matches [GET] "/system/photos/avatars/000/000/004/medium/10247317_814531065241716_5500410057914977456_n.jpg"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.0ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (39.2ms)
+
+
+Started GET "/photos/4" for 127.0.0.1 at 2014-11-07 19:00:34 +0800
+Processing by PhotosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."photo_id" = ?  [["photo_id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."photo_id" = ?[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 79ms (Views: 77.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/system/photos/avatars/000/000/004/original/10247317_814531065241716_5500410057914977456_n.jpg?1415283732" for 127.0.0.1 at 2014-11-07 19:00:34 +0800
+
+ActionController::RoutingError (No route matches [GET] "/system/photos/avatars/000/000/004/original/10247317_814531065241716_5500410057914977456_n.jpg"):
+  actionpack (4.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.7) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.7) lib/rails/engine.rb:514:in `call'
+  railties (4.1.7) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/jimmy/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.7ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/jimmy/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.7/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.2ms)
+
+
+Started DELETE "/photos/4" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+Processing by PhotosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"d3nIjaekDIbt1pRQs+xal9hrWmnidwt5TpL3NZaPn04=", "id"=>"4"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  DELETE FROM "photos" WHERE "photos"."id" = ?  [["id", 4]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 86ms (Views: 84.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:36 +0800
+
+
+Started POST "/photos/6/like" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+Processing by PhotosController#like as HTML
+  Parameters: {"authenticity_token"=>"d3nIjaekDIbt1pRQs+xal9hrWmnidwt5TpL3NZaPn04=", "id"=>"6"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "likes" ("created_at", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2014-11-07 11:00:39.722286"], ["photo_id", 6], ["updated_at", "2014-11-07 11:00:39.722286"], ["user_id", 2]]
+  [1m[35mSQL (0.7ms)[0m  UPDATE "photos" SET "likes_count" = COALESCE("likes_count", 0) + 1 WHERE "photos"."id" = 6
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 90ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 92ms (Views: 89.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:39 +0800
+
+
+Started POST "/photos/6/unlike" for 127.0.0.1 at 2014-11-07 19:00:40 +0800
+Processing by PhotosController#unlike as HTML
+  Parameters: {"authenticity_token"=>"d3nIjaekDIbt1pRQs+xal9hrWmnidwt5TpL3NZaPn04=", "id"=>"6"}
+  [1m[35mPhoto Load (0.1ms)[0m  SELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLike Load (0.2ms)[0m  SELECT  "likes".* FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  ORDER BY "likes"."id" ASC LIMIT 1  [["photo_id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "photos" SET "likes_count" = COALESCE("likes_count", 0) - 1 WHERE "photos"."id" = 6
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 16]]
+  [1m[35m (8.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 15ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-07 19:00:40 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.2ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:41 +0800
+
+
+Started POST "/photos/7/like" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+Processing by PhotosController#like as HTML
+  Parameters: {"authenticity_token"=>"d3nIjaekDIbt1pRQs+xal9hrWmnidwt5TpL3NZaPn04=", "id"=>"7"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "likes" ("created_at", "photo_id", "updated_at", "user_id") VALUES (?, ?, ?, ?)  [["created_at", "2014-11-07 11:00:42.171778"], ["photo_id", 7], ["updated_at", "2014-11-07 11:00:42.171778"], ["user_id", 2]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "photos" SET "likes_count" = COALESCE("likes_count", 0) + 1 WHERE "photos"."id" = 7[0m
+  [1m[35m (9.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 17ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.6ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 93ms (Views: 90.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:42 +0800
+
+
+Started POST "/photos/7/unlike" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+Processing by PhotosController#unlike as HTML
+  Parameters: {"authenticity_token"=>"d3nIjaekDIbt1pRQs+xal9hrWmnidwt5TpL3NZaPn04=", "id"=>"7"}
+  [1m[36mPhoto Load (0.1ms)[0m  [1mSELECT  "photos".* FROM "photos"  WHERE "photos"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT  "likes".* FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  ORDER BY "likes"."id" ASC LIMIT 1[0m  [["photo_id", 7]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "photos" SET "likes_count" = COALESCE("likes_count", 0) - 1 WHERE "photos"."id" = 7[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 17]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+Processing by PhotosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1mSELECT "photos".* FROM "photos"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2[0m  [["photo_id", 7]]
+  Rendered photos/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 98ms (Views: 97.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:43 +0800
+
+
+Started POST "/photos" for 127.0.0.1 at 2014-11-07 19:00:51 +0800
+Processing by PhotosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d3nIjaekDIbt1pRQs+xal9hrWmnidwt5TpL3NZaPn04=", "photo"=>{"avatar"=>#<ActionDispatch::Http::UploadedFile:0x007fc653bb3318 @tempfile=#<Tempfile:/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/RackMultipart20141107-18010-1js4sxt>, @original_filename="Vgu1RUfKT3WN1ZYxSWaR_14672519443_13d8873062_k-2.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"photo[avatar]\"; filename=\"Vgu1RUfKT3WN1ZYxSWaR_14672519443_13d8873062_k-2.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Photo"}
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-zpiwlg.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa7.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa7.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa7.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa720141107-18010-6c1pta'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa720141107-18010-6c1pta'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa7.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa7.jpg[0]'
+Command :: convert '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa7.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa720141107-18010-140zqu2'
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-1nqgfa720141107-18010-140zqu2'
+  [1m[35m (0.3ms)[0m  begin transaction
+Command :: file -b --mime '/var/folders/ht/q1m7kr997l1d6hqg8044845w0000gn/T/1290ff60a88f92be8a20717f94bcf51f20141107-18010-qbsxjk.jpg'
+Binary data inserted for `string` type on column `avatar_content_type`
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "photos" ("avatar_content_type", "avatar_file_name", "avatar_file_size", "avatar_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["avatar_content_type", "image/jpeg"], ["avatar_file_name", "Vgu1RUfKT3WN1ZYxSWaR_14672519443_13d8873062_k-2.jpg"], ["avatar_file_size", 306850], ["avatar_updated_at", "2014-11-07 11:00:51.599624"], ["created_at", "2014-11-07 11:00:52.995956"], ["updated_at", "2014-11-07 11:00:52.995956"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 1469ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/photos" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mPhoto Load (0.3ms)[0m  SELECT "photos".* FROM "photos"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 7]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."photo_id" = ? AND "likes"."user_id" = 2  [["photo_id", 8]]
+  Rendered photos/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 79ms (Views: 76.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/photos.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/photos.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2014-11-07 19:00:53 +0800
