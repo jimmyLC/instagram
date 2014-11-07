@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :find_id, only: [:show, :edit, :update, :destroy]
+  before_action :find_photo, only: [:show, :edit, :update, :destroy, :like, :unlike]
 
   def index
     @photos = Photo.all
@@ -31,9 +31,24 @@ class PhotosController < ApplicationController
     redirect_to photos_path
   end
 
+  def like
+    like = @photo.likes.build
+    like.user = current_user
+    like.save
+
+    redirect_to photos_path
+  end
+
+  def unlike
+    like = @photo.likes.where(user_id: current_user.id).first
+    like.destroy
+
+    redirect_to photos_path
+  end
+
   private
 
-  def find_id
+  def find_photo
     @photo = Photo.find(params[:id])
   end
 

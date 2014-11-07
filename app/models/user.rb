@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
 
+  has_many :photos # created photos
   has_many :likes
-  has_many :photos, :through => :likes
+
+  has_many :liked_photos, :through => :likes, :source => :photo # liked photos
 
   def self.from_omniauth(auth_hash)
     user = where(:fb_uid => auth_hash[:uid]).first_or_initialize

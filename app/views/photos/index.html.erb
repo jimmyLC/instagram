@@ -9,7 +9,12 @@
 <h1>Show Photos</h1>
 <% @photos.each do |photo| %>
   <%= link_to image_tag(photo.avatar.url(:medium)), photo_path(photo) %>
-  <%= link_to "Like" %>
+  <% if photo.can_be_liked?(current_user) %>
+      <%= link_to "Like", like_photo_path(photo), :method => :post %>
+    <%else%>
+      <%= link_to "Unlike", unlike_photo_path(photo), :method => :post %>
+  <% end %>
+  <%= photo.likes_count %>
 <% end %>
 
 <h1>Upload Photos</h1>

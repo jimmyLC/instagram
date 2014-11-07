@@ -5,6 +5,12 @@ Rails.application.routes.draw do
 
   resources :photos do
     resources :comments
+
+    member do
+      post :like
+      post :unlike
+    end
+
   end
 
   root "photos#index"
