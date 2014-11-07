@@ -11,6 +11,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.create(photo_params)
+
     if @photo.save
       redirect_to photos_path
     end
@@ -53,6 +54,6 @@ class PhotosController < ApplicationController
   end
 
   def photo_params
-    params.require(:photo).permit(:title ,:avatar)
+    params.require(:photo).permit(:title ,:avatar, :taglist)
   end
 end

@@ -4,6 +4,10 @@
 <%= link_to "Back", photos_path %><br>
 <%= image_tag @photo.avatar.url %><br>
 
+<% @photo.tags.each do |tag| %>
+  <%= tag.name %>
+<% end %>
+
 <p>comments</p>
 <% @photo.comments.each do |co| %>
 <div>
