@@ -1,7 +1,7 @@
 <% if current_user %>
   Hi, <%= current_user.name %>
   <%= current_user.email %>
-  <%= link_to "logout", auth_signout_path, method: :delete %>
+  <%= link_to t("logout"), auth_signout_path, method: :delete %>
 <% else %>
   <%= link_to "Facebook login", "/auth/facebook" %>
 <% end %>
