@@ -14,8 +14,14 @@ Rails.application.routes.draw do
 
     end
 
-    resources :users
-    resources :friendships
+    resources :users do
+      member do
+        post :addfriend
+        delete :unfriend
+      end
+    end
+
+
 
 
   root "photos#index"

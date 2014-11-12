@@ -16,4 +16,14 @@ class UsersController < ApplicationController
 
   end
 
+  def addfriend
+    @friend = current_user.friendships.create(:friend_id => params[:id])
+    redirect_to users_path
+  end
+
+  def unfriend
+    @friend = current_user.friendships.where('friend_id=?', params[:id]).first
+    @friend.destroy
+    redirect_to users_path
+  end
 end

@@ -5,7 +5,7 @@
       <%= "" %>
     <% else %>
    <%= link_to u.name, user_path(u) %>
-   <%= link_to "Add Friend", friendships_path(:friend_id => u), :method => :post %>
+   <%= link_to "Add Friend", addfriend_user_path(u), method: :post %>
    <br>
    <% end %>
  <% end %>
