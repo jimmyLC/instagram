@@ -3,15 +3,20 @@ Rails.application.routes.draw do
   get '/auth/failure', to: 'sessions#failure'
   delete '/auth/signout', to: 'sessions#destroy'
 
-  resources :photos do
-    resources :comments
 
-    member do
-      post :like
-      post :unlike
+    resources :photos do
+      resources :comments
+
+      member do
+        post :like
+        post :unlike
+      end
+
     end
 
-  end
+    resources :users
+    resources :friendships
+
 
   root "photos#index"
 
