@@ -10,7 +10,9 @@
   <li>
       <%= f.name %>
 
-      <% if f == current_user %>
+      <% if @user == current_user # My profile page %>
+          <%= link_to "unfriend", unfriend_user_path(current_user, :friend_id => f.id), method: :post %>
+      <% elsif f == current_user # User profile page %>
         <%= link_to "unfriend", unfriend_user_path(current_user, :friend_id => @user.id), method: :post %>
       <% end %>
 
