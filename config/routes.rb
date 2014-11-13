@@ -4,22 +4,22 @@ Rails.application.routes.draw do
   delete '/auth/signout', to: 'sessions#destroy'
 
 
-    resources :photos do
-      resources :comments
+  resources :photos do
+    resources :comments
 
-      member do
-        post :like
-        post :unlike
-      end
-
+    member do
+      post :like
+      post :unlike
     end
 
-    resources :users do
-      member do
-        post :addfriend
-        delete :unfriend
-      end
+  end
+
+  resources :users do
+    member do
+      post :addfriend
+      post :unfriend
     end
+  end
 
 
 

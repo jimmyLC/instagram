@@ -28,7 +28,12 @@ class Photo < ActiveRecord::Base
     end
   end
 
-  def can_be_liked?(user)
-    self.likes.where(user_id: user.id).empty?
+  def find_user_like(user)
+    self.likes.where(user: user).first
   end
+
+  def can_be_liked?(user)
+    find_user_like(user).nil?
+  end
+
 end

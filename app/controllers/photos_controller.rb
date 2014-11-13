@@ -11,6 +11,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.create(photo_params)
+    @photo.user = current_user
 
     if @photo.save
       redirect_to photos_path
@@ -41,7 +42,7 @@ class PhotosController < ApplicationController
   end
 
   def unlike
-    like = @photo.likes.where(user_id: current_user.id).first
+    like = @photo.find_user_like(current_user)
     like.destroy
 
     redirect_to photos_path

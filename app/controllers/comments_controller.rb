@@ -19,6 +19,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def find_photo
     @photo = Photo.find(params[:photo_id])
   end

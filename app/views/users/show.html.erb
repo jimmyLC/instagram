@@ -1,6 +1,6 @@
-<h2>List my friends</h2>
+<h2>List user friends</h2>
 <ul><% @friends.each do |f|%>
   <li><%= f.name%>
-      <%= link_to "unfriend", unfriend_user_path(f), method: :delete %>
+      <%= link_to "unfriend", unfriend_user_path(f), method: :post %>
   </li>
 <% end %></ul>
