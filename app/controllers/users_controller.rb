@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @friends = current_user.friends.all
+    @user = User.find(params[:id])
   end
 
   def create
@@ -17,13 +17,16 @@ class UsersController < ApplicationController
   end
 
   def addfriend
-    @friend = current_user.friendships.create(:friend_id => params[:id])
-    redirect_to users_path
+    @friend = User.find(params[:friend_id])
+    current_user.add_friend(@friend)
+
+    redirect_to :back
   end
 
   def unfriend
-    @friend = current_user.friendships.where('friend_id=?', params[:id]).first
-    @friend.destroy
-    redirect_to users_path
+    @friend = User.find(params[:friend_id])
+    current_user.remove_friend(@friend)
+
+    redirect_to :back
   end
 end

@@ -1,6 +1,18 @@
+<h2><%= @user.name %></h2>
+
+<% if @user.can_add_friend?(current_user) %>
+  <%= button_to "Add Friend", addfriend_user_path(current_user, :friend_id => @user.id) %>
+<% end %>
+
 <h2>List user friends</h2>
-<ul><% @friends.each do |f|%>
-  <li><%= f.name%>
-      <%= link_to "unfriend", unfriend_user_path(f), method: :post %>
+
+<ul><% @user.all_friends.each do |f|%>
+  <li>
+      <%= f.name %>
+
+      <% if f == current_user %>
+        <%= link_to "unfriend", unfriend_user_path(current_user, :friend_id => @user.id), method: :post %>
+      <% end %>
+
   </li>
 <% end %></ul>
